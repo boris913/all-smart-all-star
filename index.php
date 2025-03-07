@@ -260,11 +260,13 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <form class="newsletter-form" action="#">
-                        <input type="email" class="newsletter-input mb-3" placeholder="Votre email" name="email" style="cursor: text;">
-                        <button class="btn btn-light rounded-pill w-100">S'abonner</button>
-                    </form>
+                    <div class="footer-section">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form" action="#">
+                            <input type="email" class="newsletter-input mb-3" placeholder="Votre email" name="email" style="cursor: text;">
+                            <button class="btn btn-light rounded-pill w-100">S'abonner</button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="text-center pt-4 border-top border-white-10">
