@@ -1,0 +1,129 @@
+/* Style Professionnel pour les Dons */
+.donation-section {
+    padding: 6rem 0;
+    background: linear-gradient(45deg, #f8f9fa, #ffffff);
+}
+
+.progress-wrapper {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.progress-bar-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-bar-label span {
+    color: var(--primary-500);
+}
+
+.amount-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.amount-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.amount-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-300);
+    box-shadow: 0 8px 24px rgba(75,55,176,0.1);
+}
+
+.amount-card.selected {
+    border-color: var(--primary-500);
+    background: rgba(75,55,176,0.03);
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-500);
+}
+
+.benefit {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.custom-amount {
+    margin-top: 2rem;
+}
+
+.donation-summary {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 2rem;
+}
+
+.payment-methods {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.method-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.method-card.active {
+    border-color: var(--primary-500);
+    background: rgba(75,55,176,0.03);
+}
+
+.btn-confirm-donation {
+    width: 100%;
+    background: var(--primary-500);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-confirm-donation:hover {
+    background: var(--primary-600);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(75,55,176,0.2);
+}
+
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 4rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--gray);
+}
