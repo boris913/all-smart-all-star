@@ -260,7 +260,6 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-section">
                     <h4>Liens Utiles</h4>
                     <div class="footer-links">
@@ -270,19 +269,18 @@
                         <a href="#">FAQ</a>
                     </div>
                 </div>
-
                 <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <form class="newsletter-form" action="#">
-                        <input type="email" class="newsletter-input mb-3" placeholder="Votre email" name="email" style="cursor: text;">
-                        <button class="btn btn-light rounded-pill w-100">S'abonner</button>
-                    </form>
+                    <div class="footer-section">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form" action="#">
+                            <input type="email" class="newsletter-input mb-3" placeholder="Votre email" name="email" style="cursor: text;">
+                            <button class="btn btn-light rounded-pill w-100">S'abonner</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-
             <div class="text-center pt-4 border-top border-white-10">
                 <p class="mb-0">&copy; 2025 All Smart All Star - Tous droits réservés</p>
-                <!-- <p class="small mt-1">Développé avec ❤️ pour l'éducation</p> -->
             </div>
         </div>
     </footer>
