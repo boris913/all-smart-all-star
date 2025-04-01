@@ -8,18 +8,19 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
                 <img src="images/logo.png" alt="ASAS Logo" class="img-fluid" style="max-height: 40px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto text-center">
+                <ul class="navbar-nav ms-auto text-center">
                     <li class="nav-item">
                         <a class="nav-link active" href="#home">Accueil</a>
                     </li>
@@ -36,33 +37,201 @@
                         <a class="nav-link" href="#support">Partenaires</a>
                     </li>
                 </ul>
-                <a href="src/views/donate.php" target="_blank" class="btn-donation ms-lg-3">
-                    <i class="fas fa-hand-holding-heart me-2"></i>Faire un Don
-                </a>
             </div>
         </div>
     </nav>
 
-    <section class="hero d-flex align-items-center text-white">
-        <div class="container hero-content text-center">
-            <h1 class="display-1 fw-bold mb-4">All Smart-All Star</h1>
-            <h2 class="display-3 fw-400 mb-4">Réinventons<br>l'Éducation</h2>
-            <p class="lead mb-5">La première téléréalité éducative panafricaine</p>
-            <button class="btn btn-lg btn-light px-5 py-3 rounded-pill">
-                <i class="fas fa-play-circle me-2"></i>Regarder maintenant
-            </button>
-        </div>
-    </section>
+<style>
+/* Nouveau système de boutons - Version 2.0 */
+.btn-cta {
+    --main-color: var(--primary-500);
+    --hover-color: var(--primary-900);
+    --icon-bg: rgba(255,255,255,0.1);
+    
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 2.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    background: linear-gradient(145deg, 
+        var(--main-color) 0%, 
+        color-mix(in srgb, var(--main-color), black 15%) 100%);
+    color: var(--light);
+}
 
-    <section id="video-section" class="d-none">
-        <div class="container text-center py-5">
-            <h2 class="text-center mb-3 display-4 fw-bold mb-4">Regardez la Série</h2>
-            <div class="title-divider"></div>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/id=2" title="YouTube video" allowfullscreen></iframe>
+.btn-cta--accent {
+    --main-color: var(--accent-500);
+    --hover-color: var(--accent-900);
+    --icon-bg: rgba(0,0,0,0.1);
+}
+
+.btn-cta__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--icon-bg);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Interactions */
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px color-mix(in srgb, var(--main-color) 20%, transparent);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.btn-cta:hover .btn-cta__icon {
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* Effet de profondeur */
+.btn-cta::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, 
+        transparent 0%, 
+        rgba(255,255,255,0.08) 50%, 
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-cta:hover::after {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .btn-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 1.25rem;
+    }
+    
+    .btn-cta__icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+</style>
+
+<!-- Hero Section Redesign -->
+<section class="hero d-flex align-items-center text-white">
+    <div class="container hero-content text-center">
+        <h1 class="display-1 fw-bold mb-4">All Smart-All Star</h1>
+        <h2 class="display-3 fw-400 mb-4">Réinventons<br>l'Éducation</h2>
+        <p class="lead mb-5 opacity-75">La première téléréalité éducative panafricaine</p>
+        
+        <!-- <div class="d-flex gap-4 justify-content-center flex-wrap">
+            <a href="https://papers.alstug.com/donate?utm_medium=bouton_partenaire&utm_source=siteAllsmart%20Allstar" 
+               class="btn btn-cta"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span class="btn-cta__icon">
+                    <i class="fas fa-network-wired fa-lg"></i>
+                </span>
+                Devenir partenaire
+            </a>
+            
+            <a href="https://papers.alstug.com/donate?utm_medium=bouton_don&utm_source=siteAllsmart%20Allstar" 
+               class="btn btn-cta btn-cta--accent"
+               target="_blank"
+               rel="noopener noreferrer">
+                <span class="btn-cta__icon">
+                    <i class="fas fa-seedling fa-lg"></i>
+                </span>
+                Faire un Don
+            </a>
+        </div> -->
+    </div>
+</section>
+
+   <!-- Section Vidéo Visible -->
+<!-- <section id="video-section">
+    <div class="container text-center py-5">
+        <h2 class="text-center mb-3 display-4 fw-bold mb-4">Trailler</h2>
+        <div class="title-divider"></div>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/id=2" title="YouTube video" allowfullscreen></iframe>
+        </div>
+    </div>
+</section> -->
+
+<section id="teasing" class="teasing-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Colonne Vidéo -->
+            <div class="col-md-6">
+                <div class="video-wrapper">
+                    <video controls autoplay loop class="w-100 rounded" poster="images/videoframe_3734.png">
+                        <source src="images/videoplayback.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+            </div>
+            <!-- Colonne Description -->
+            <div class="col-md-6">
+                <div class="description-wrapper">
+                    <h2 class="display-4 fw-bold mb-4">Découvrez notre vision</h2>
+                    <p class="lead mb-4">
+                        All Smart All Star est une initiative révolutionnaire qui vise à transformer l'éducation en Afrique grâce à l'innovation et au divertissement. 
+                        Rejoignez-nous pour réinventer l'avenir de l'éducation !
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
+        <!-- Bouton centré -->
+        <div class="text-center mt-5">
+            <button class="btn btn-cta btn-lg" data-bs-toggle="modal" data-bs-target="#adhereModal">
+                <span class="btn-cta__icon">
+                    <i class="fas fa-handshake"></i>
+                </span>
+                J'adhère à la vision
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Modale -->
+<div class="modal fade" id="adhereModal" tabindex="-1" aria-labelledby="adhereModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adhereModalLabel">Rejoignez-nous</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Choisissez une option pour soutenir notre vision :</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="https://papers.alstug.com/donate?utm_medium=bouton_partenaire&utm_source=siteAllsmart%20Allstar" class="btn btn-cta" target="_blank">
+                        <span class="btn-cta__icon">
+                            <i class="fas fa-users"></i>
+                        </span>
+                        Devenir partenaire
+                    </a>
+                    <a href="https://papers.alstug.com/donate?utm_medium=bouton_partenaire&utm_source=siteAllsmart%20Allstar" class="btn btn-cta btn-cta--accent" target="_blank">
+                        <span class="btn-cta__icon">
+                            <i class="fas fa-donate"></i>
+                        </span>
+                        Faire un don
+                    </a>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <section class="container py-5">
         <div class="row g-5 card-grid">
